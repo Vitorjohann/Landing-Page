@@ -1,0 +1,50 @@
+/*padding vertical(emcima e embaixo) com tamanhos baseados no global*/
+.py-base {
+  padding-block: var(--py-base);
+}
+
+.py-lg {
+  padding-block: var(--py-lg);
+}
+
+.py-xl {
+  padding-block: var(--py-xl);
+}
+/*px eixo horizontal e horizontal é inline e nao paddingblock*/
+.px-lg {
+  padding-inline: var(--px-lg);
+}
+
+
+/*container para tudo que estiver dentro estar alinhado na pagina, dos lados tem 32px  , *2 tira dos dois lados, margin-inline alinha ao centro o container no caso para deixar certo*/
+.container {
+  --max-width: 375px;
+  width: min(var(--max-width), 100% - var(--px-lg) * 2);
+  margin-inline: auto;
+  border: solid red;
+}
+/*display none pq tudo primeiro para o mobile*/
+.desktop-only {
+  display: none;
+}
+/*tela pequena um abaixo do outro diferente da tela grande(muito parecido com o flex)*/
+.even-columns {
+  display: grid;
+  gap: 1rem;
+}
+
+/*ajusta responsividade do .container para telas grandes, 80rem pois 80*16 é 1280px*/
+@media (width >= 80em) {
+  .container {
+    --max-width: 80rem;
+  }
+
+  .desktop-only {
+    display: initial;
+  }
+  /*tela grande um ao lado do outro*/
+  .even-columns {
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+  }
+}
