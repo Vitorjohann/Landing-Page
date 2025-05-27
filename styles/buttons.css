@@ -1,0 +1,67 @@
+
+/*no inicio para zerar ele e depois ajustando os itens do botao e do <a>*/
+.btn {
+  --btn-bg-color: var(--text-color-primary);
+  --btn-color: var(--bg-color);
+  border: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+
+  border-radius: .5rem;
+
+  font: var(--fw-md) var(--fs-base)/1.5rem var(--ff-sans);
+
+  cursor: pointer;
+
+  background: var(--btn-bg-color);
+  color: var(--btn-color);
+}
+
+/*quando passar o mouse por cima ira mudar a cor para um degrade*/
+.btn:hover {
+  --btn-bg-color: linear-gradient(
+    90deg,
+    var(--brand-color-secondary) 0%,
+    var(--brand-color-primary) 100%
+  );
+  --btn-color: var(--surface-color);
+}
+
+/*ajustando tamanho dos botoes e suas class para usar no index.html*/
+.btn-sm{
+  padding: .5rem 1rem;
+  font-size: var(--fs-sm);
+}
+.btn-md{
+  padding: .75rem 1.5rem;
+  font-size: var(--fs-base);
+}
+.btn-lg{
+  padding: 1rem 2rem;
+  font-size: 1.125rem;
+}
+/*tudo aqui seria para a bordar gradiente e secondary, clip é para recortar apenas o texto*/
+.btn[aria-label] {
+
+  position: relative;
+  
+  &::before {
+    content: ""; /*tem que deixar vazio o conteudo*/
+    position: absolute; /*position absolute em relacao ao .btn*/
+    border-radius: inherit; /*vai herdar dos ajuster de cima*/
+    inset: 0.093rem; /*borda do botao*/
+    background-color: var(--bg-color); /*cor de fundo*/
+  }
+  &::after {
+    content: attr(aria-label);
+    background: var(--btn-bg-color);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    position: relative;
+    z-index: 1;
+  }
+}

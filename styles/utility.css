@@ -32,6 +32,18 @@
   display: grid;
   gap: 1rem;
 }
+/*clases para ter para usar no index.html para ser mais rapido*/
+.flex {
+  display: flex;
+}
+
+.gap-1 {
+  gap: 1rem;
+}
+
+.grid {
+  display: grid;
+}
 
 /*ajusta responsividade do .container para telas grandes, 80rem pois 80*16 é 1280px*/
 @media (width >= 80em) {
