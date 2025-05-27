@@ -76,6 +76,19 @@ a {
   text-decoration: none;
   color: inherit;
 }
+/*fundo do a, links para clicar ficar laranja*/
+a:hover {
+  background: linear-gradient(
+    90deg,
+    var(--brand-color-secondary) 0%,
+    var(--brand-color-primary) 100%
+  );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
 /*para lembrar que é uma listam, tirar o circulo da lista, o margin e padding que estao tirando mas isso é para ele nao esqucer que é uma lista*/
 ul[role="list"] {
   list-style: none;

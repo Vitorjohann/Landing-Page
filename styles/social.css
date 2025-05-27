@@ -1,0 +1,43 @@
+/*criando uma tamanho e o display block para funcionar os tamanhos e zerando o background image, sem o display block a imagem nao iria aparecer n sei pq*/
+a.social {
+  --bg-img: ""; 
+  background-image: var(--bg-img);
+  width: 1.5rem;
+  height: 1.5rem;
+  display: block;
+
+  -webkit-background-clip: initial;
+  background-clip: initial;
+/*isso para buscar a imagem e mostrar*/
+  &[aria-label="tiktok"] {
+    --bg-img: url(../assets/Icons/tiktok.svg);
+
+    &:hover{
+      --bg-img: url(../assets/Icons/tiktok-hover.svg);
+    }
+  }
+
+  &[aria-label="instagram"] {
+    --bg-img: url(../assets/Icons/instagram.svg);
+
+    &:hover{
+      --bg-img: url(../assets/Icons/instagram-hover.svg);
+    }
+  }
+
+  &[aria-label="twitter"] {
+    --bg-img: url(../assets/Icons/twitter.svg);
+
+    &:hover{
+      --bg-img: url(../assets/Icons/twitter-hover.svg);
+    }
+  }
+
+  &[aria-label="discord"] {
+    --bg-img: url(../assets/Icons/discord.svg);
+
+    &:hover{
+      --bg-img: url(../assets/Icons/discord-hover.svg);
+    }
+  }
+}
