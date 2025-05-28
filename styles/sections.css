@@ -1,0 +1,32 @@
+#smartphones-img {
+  margin-top: 5rem; /*distancia do topo da imagem*/
+  background: url(../assets/ilustration.svg) top/cover; /*top para ficar em cima e logo depois com o / para ser no top o cover no caso cobrir*/
+}
+
+/*configurando o font somente do que tiver nas secoes header*/
+section {
+  & header {
+    & strong {
+      display: block;
+      font: var(--fw-md) var(--fs-sm)/100% var(--ff-sans);
+      letter-spacing: 0.08em;/* espaco das letras*/
+      text-transform: uppercase;  /*tudo em caixa alta o texto*/
+
+      color: var(--brand-color-primary); /*cor do texto*/
+    }
+    & h2 {
+      margin-top: .5rem; /*espaco topo*/
+    }
+  }
+
+  & p {
+    margin-top: .5rem;/*espaco topo*/
+    color: var(--text-color-secondary);
+  }
+}
+
+@media (width >= 80em) {
+  #smartphones-img {
+    display: none; /*para eliminar a imagem do #smartphones-img pq ela tava indo para o desktop e tava repetindo la, dai com displaynone ele elimina*/ 
+  }
+}
