@@ -94,7 +94,7 @@ ul[role="list"] {
   list-style: none;
 }
 
-/*arrumar fontes por conta do mobile e webpc*//*maior ou igual a 80em, 80em vai ser 80*16=1280 que é igual para todos, no caso se for maior ou igual ele vai mudar o tamanho das fontes do root sem mudar o root em si pois fiz antes para mobile, agora esses media é para desktop mudar sempre para maior os valores*/
+/*arrumar fontes por conta do desktop*//*maior ou igual a 80em, 80em vai ser 80*16=1280 que é igual para todos, no caso se for maior ou igual ele vai mudar o tamanho das fontes do root sem mudar o root em si pois fiz antes para mobile, agora esses media é para desktop mudar sempre para maior os valores*/
 @media (width >= 80em) {
   :root {
     --fs-lg: 2rem;

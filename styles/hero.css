@@ -1,0 +1,52 @@
+/*hero é logo depois do header*/
+
+#hero {
+  text-align: center; /* alinhar texto no meio*/
+
+  /*esse codigo ele seleciona tudo que tiver aquele sourch src na pesquisa ao lado*/
+  & img[src*="music"] {
+    width: 12.875rem;
+  }
+
+  & h1 {
+    margin-top: 1rem;/*distancia topo*/
+  }
+
+  & p {
+    font: var(--fw-md) var(--fs-lg)/1.4 var(--ff-sans); /*ajustando a grossura o tamanho e a fonte e o 1.4 seria 140% dai de espacamento*/
+    color: var(--text-color-secondary);/*cor do texto*/
+    margin-top: .5rem; /*distancia no topo*/
+  }
+
+  & .buttons {
+    justify-content: center; /*alinhas botoes no centro da tela*/
+    margin-top: 2rem; /*tomar distancia do texto do hero*/
+  }
+}
+
+/*ajustando tamanho para o desktop*/
+@media (width >= 80em) {
+  #hero {
+    background: url(../assets/bg-hero-desktop.svg) no-repeat bottom center/contain; /*no repeat para nao repetir, bottom center para centralizar, e contain para conter tudo que aparece*/
+    padding-bottom: 15rem;
+
+  /*esse codigo ele seleciona tudo que tiver aquele sourch src na pesquisa ao lado*/
+  & img[src*="music"] {
+    width: 25.75rem;
+  }
+
+  & h1 {
+    margin-top: 1.5rem;
+  }
+
+  & p {
+    margin-top: 1rem;
+    font-size: 2.5rem;
+  }
+
+  .buttons {
+    margin-top: 3rem;
+  }
+  }
+  
+}
