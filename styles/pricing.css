@@ -1,0 +1,51 @@
+#pricing {
+  --fs-price: 2rem;
+
+  & header {
+    text-align: center; /*alinhar no centro*/
+  }
+
+  & .cards {
+    margin-top: 2rem; /*eapco nos topos*/
+  }
+
+  & h3 {
+    font-size: 1.25rem; /*ajusatr fonte h3*/
+    margin-top: 0; /*espaco topo, reset*/
+  }
+
+  & .card p {
+    margin-top: .25rem; /*espaco top dos textos*/
+  }
+
+  & zin-pricing {
+    display: block; /*display block para funcionar o restante em baixo pq sem ele nao funciona*/
+    padding-block: 1.5rem;
+    font: var(--fw-bold) var(--fs-price)/1.2 var(--ff-sans);
+  }
+
+  & zin-pricing small { /*o texto da div zinpricing que é diferente*/
+    font: var(--fw-base) 1rem/125% var(--ff-sans); /*1rem de linha e 125% de linha e o restante a gente vai combinando para criar uma fonte nova*/
+    color: var(--text-color-secondary);
+  }
+
+  & .btn { /*aumentar o tamanho dos botes*/
+    width: 100%;
+  }
+
+  & .separator { /*isso pq foi criado uma div com nome separator, apenas para criar aquela linha cinza que fica dividindo*/
+    height: 1px;
+    margin-block: 2rem;
+    background: radial-gradient(var(--text-color-secondary), var(--surface-color) 70%); /*escolhe duas cores e o 70% para criar aquele radialgra..*/
+  }
+
+/*desktop*/
+  @media (width >=80em) {
+    --fs-price: 2.5rem;
+
+    & header {
+      max-width: 50rem; /*tamanho maximo*/
+      margin-inline: auto; /*alinhas no centro o header desktop*/
+    }  
+  }
+}

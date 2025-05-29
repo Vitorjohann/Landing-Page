@@ -56,7 +56,7 @@
     content: ""; /*tem que deixar vazio o conteudo*/
     position: absolute; /*position absolute em relacao ao .btn*/
     border-radius: inherit; /*vai herdar dos ajuster de cima*/
-    inset: 0.093rem; /*borda do botao*/
+    inset: 1px; /*borda do botao*/
     background-color: var(--bg-color); /*cor de fundo*/
   }
   &::after {
