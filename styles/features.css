@@ -1,0 +1,70 @@
+#features {
+  & .cards {
+    grid-template-columns: 17.5rem 1fr 1fr 17.5rem; /*17.5 para a coluna da esquerda 1fr 1fr por conta de ali em baixo ter duas colunas, mesmo que em cima so tenha uma, e 17.5 dnv pq sao fixas*/
+    grid-template-rows: 25rem 25rem; /*altura das linhas*/
+    gap: 2rem; /*espacamento*/
+  }
+
+  & .card {
+    position: relative;
+    overflow: hidden; /*para nada sair fora da caixa, assim a imagem fica cortada*/
+
+    & img.desktop-only {
+      position: absolute; /*posicionamento absoluto em relacao ao card relative*/
+      max-width: 15rem; /*largura maxima de 15 rem*/
+      filter: drop-shadow(1rem 1rem 4rem rgb(0 0 0 / 0.34)); /*ordem, (1)heixo horizontal, (1)heixo vertical, (4)espalhamento, cor */
+    }
+  }
+
+  & .card:nth-child(1) {
+    grid-column: 1/2; /*comeca na 1 e termina na linha 2*/
+  }
+
+  & .card:nth-child(2) {
+    grid-column: 2/4;  /*comecando na linha dois e terminando na linha 4, é dividido em 4 partes o grid dai isso mostra onde comeca e termina*/
+
+    & > div {
+      max-width: 16rem; /*ajustando o tamanho, na div, por isso colocar ela dentrto de uma div, e por isso o nthchild(2)*/
+    }
+
+    & .desktop-only { /*posicionando a imagem*/
+      bottom: 2rem; /*espaco de 2rem em baixo*/
+      right: 2rem; /*para direita 2rem*/
+    }
+  }
+
+  & .card:nth-child(3) {
+    grid-column: 4/5; /*so para fixar que fique do 4 ao 5*/
+  }
+
+  & .card:nth-child(4) {
+    grid-column: 1/3;  /*comecando na linha 1 e terminando na linha 3, é dividido em 4 partes o grid dai isso mostra onde comeca e termina*/
+    grid-row: 2/3; /*garantir que comeca na linha 2 e termina na linha 3, que no caso sao as linhas horizontais, column é vertical*/
+
+    & > div {
+      max-width: 16rem; /*ajustando o tamanho, na div, por isso colocar ela dentrto de uma div, e por isso o nthchild(2)*/
+      margin-left: auto; /*para o texto ir para direita ja que é ao contrario neste*/
+    }
+
+    & .desktop-only { /*posicionando a imagem*/
+      bottom: 2rem; /*espaco de 2rem em baixo*/
+      left: 2rem; /*para esquerda 2rem*/
+    }
+  }
+
+  & .card:nth-child(5) {
+    grid-column: 3/5;  /*comecando na linha 3 e terminando na linha 5, é dividido em 4 partes o grid dai isso mostra onde comeca e termina*/
+    grid-row: 2/3; /*garantir que comeca na linha 2 e termina na linha 3, que no caso sao as linhas horizontais, column é vertical*/
+
+    & > div {
+      max-width: 16rem; /*ajustando o tamanho, na div, por isso colocar ela dentrto de uma div, e por isso o nthchild(2)*/
+    }
+
+    & .desktop-only { /*posicionando a imagem*/
+      top: 2rem; /*espaco de 2rem em cima*/
+      right: 2rem; /*para direita 2rem*/
+    }
+  }
+
+  
+}

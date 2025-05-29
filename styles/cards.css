@@ -1,0 +1,10 @@
+.card {
+  background: var(--surface-color);  /*cor da borda*/
+  border: 1px solid var(--stroke-color); /*criar borda*/
+  border-radius: 1.5rem; /*arredondar*/
+  
+  /*chamando o h3 dentro da class .card*/
+  & h3 {
+    margin-top: 1rem; /*distancia topo*/
+  }
+}
