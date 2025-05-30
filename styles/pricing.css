@@ -2,50 +2,159 @@
   --fs-price: 2rem;
 
   & header {
-    text-align: center; /*alinhar no centro*/
+    text-align: center;
+    /*alinhar no centro*/
   }
 
   & .cards {
-    margin-top: 2rem; /*eapco nos topos*/
+    margin-top: 2rem;
+    /*eapco nos topos*/
   }
 
   & h3 {
-    font-size: 1.25rem; /*ajusatr fonte h3*/
-    margin-top: 0; /*espaco topo, reset*/
+    font-size: 1.25rem;
+    /*ajusatr fonte h3*/
+    margin-top: 0;
+    /*espaco topo, reset*/
   }
 
   & .card p {
-    margin-top: .25rem; /*espaco top dos textos*/
+    margin-top: .25rem;
+    /*espaco top dos textos*/
   }
 
   & zin-pricing {
-    display: block; /*display block para funcionar o restante em baixo pq sem ele nao funciona*/
+    display: block;
+    /*display block para funcionar o restante em baixo pq sem ele nao funciona*/
     padding-block: 1.5rem;
     font: var(--fw-bold) var(--fs-price)/1.2 var(--ff-sans);
   }
 
-  & zin-pricing small { /*o texto da div zinpricing que é diferente*/
-    font: var(--fw-base) 1rem/125% var(--ff-sans); /*1rem de linha e 125% de linha e o restante a gente vai combinando para criar uma fonte nova*/
+  & zin-pricing small {
+    /*o texto da div zinpricing que é diferente*/
+    font: var(--fw-base) 1rem/125% var(--ff-sans);
+    /*1rem de linha e 125% de linha e o restante a gente vai combinando para criar uma fonte nova*/
     color: var(--text-color-secondary);
   }
 
-  & .btn { /*aumentar o tamanho dos botes*/
+  & .btn {
+    /*aumentar o tamanho dos botes*/
     width: 100%;
   }
 
-  & .separator { /*isso pq foi criado uma div com nome separator, apenas para criar aquela linha cinza que fica dividindo*/
+  & .separator {
+    /*isso pq foi criado uma div com nome separator, apenas para criar aquela linha cinza que fica dividindo*/
     height: 1px;
     margin-block: 2rem;
-    background: radial-gradient(var(--text-color-secondary), var(--surface-color) 70%); /*escolhe duas cores e o 70% para criar aquele radialgra..*/
+    background: radial-gradient(var(--text-color-secondary), var(--surface-color) 70%);
+    /*escolhe duas cores e o 70% para criar aquele radialgra..*/
   }
 
-/*desktop*/
+  & li {
+    /*editando lista li*/
+    color: var(--text-color-secondary);
+    /*texto color*/
+    background: url(../assets/Icons/Check.svg) no-repeat;
+    /*colocar a imagem e nao repetir*/
+    padding-left: 2rem;
+    /*empurrar o texto da lista para a esquerda*/
+  }
+
+  & ul+small {
+    /*um ul que tenha um small apos*/
+    display: block;
+    /*para poder usar com outras coisas*/
+    margin-top: 1.5rem;
+    /*espacamento topo da imagem so desbloqueia com o display block*/
+    font-size: 0.875rem;
+    /*tamanho da fonte*/
+    color: var(--text-color-secondary);
+    /*cor do texto*/
+  }
+
+  & .premium {
+    position: relative;
+
+    & .card {
+      padding-top: 4.25rem;
+
+      /*espaçamento do texto 1 mes gratis*/
+      &>span {
+        position: absolute;
+        /*posicao absoluta em relacao a caixa premiun relative*/
+        top: 0;
+        left: 0;
+
+        padding: .75rem 2rem;
+        background: linear-gradient(
+            /*comando degrade de 90graus*/
+            90deg,
+            var(--brand-color-secondary) 0%,
+            /*cor do degrade iniciando em 0%*/
+            var(--brand-color-primary) 100%
+            /*cor do degrade terminando em 100%*/
+          );
+
+        border-top-left-radius: 1.5rem;
+        /*comando para arredondar no ponto esquerda em cima*/
+        border-bottom-right-radius: 1.5rem;
+        /*comando para arrendondar no ponto direta baixo*/
+
+        font: 600 var(--fs-sm) var(--ff-sans);
+        /*font que esta um pouco fora do padrao ai constroi uma nova*/
+        text-transform: uppercase;
+        /*aumentar o texto*/
+        letter-spacing: 0.08em;
+        /*espacamento entre as linhas*/
+        color: var(--bg-color);
+        /*cor do texto 1 mes gratis com variavel*/
+      }
+    }
+
+    padding: 2px;
+
+    /*padding para aparecer a borda laranja, se nao nao fica aparente*/
+    &::before {
+      /*para criar a borda deve se criar um elemento before com content vazio*/
+      content: "";
+      /*deve ter um content vazio*/
+      background: linear-gradient(90deg,
+          var(--brand-color-secondary) 0%,
+          var(--brand-color-primary) 100%);
+      position: absolute;
+      inset: 0;
+      /*para preencher tudo que tem*/
+      border-radius: 1.5rem;
+      /*borda da cor laranja da borda*/
+      z-index: -1;
+      /*colocando ele uma camada a baixo*/
+    }
+  }
+
+  /*desktop*/
   @media (width >=80em) {
     --fs-price: 2.5rem;
 
     & header {
-      max-width: 50rem; /*tamanho maximo*/
-      margin-inline: auto; /*alinhas no centro o header desktop*/
-    }  
+      max-width: 50rem;
+      /*tamanho maximo*/
+      margin-inline: auto;
+      /*alinhas no centro o header desktop*/
+    }
+
+    & .premium .card {
+      padding-bottom: 6rem;
+      /*espacamento em baixo do texto do texto do meio*/
+    }
+
+    & .btn-md {/*copiado o btnmd do outro para colocar no desktop*/
+      padding: .75rem 1.5rem;
+      font-size: var(--fs-base);
+    }
+
+    & .card:nth-child(3) .separator {
+      margin-block: 1.5rem;
+      /*espacamento o ultimo bloco de precos em relacao ao botao dele*/
+    }
   }
 }
