@@ -1,0 +1,59 @@
+footer {
+  color: var(--text-color-secondary); /*mudar cores*/
+  font-weight: var(--fw-md); /*grossura da fonte*/
+
+  & .container {
+    padding-inline: 3rem; /*padding direto pq muda no desktop e no mobile*/
+  }
+
+  & .container,
+  & .top {/*mexendo nos dois ao mesmo tempo*/
+    gap: 3rem;
+  }
+
+  & nav.even-columns { /*os que tiver evencoluns mexer*/
+    gap: 4rem; /*gap entre as coluns de nav*/
+  }
+
+  & .top ul { /*na ul do top em especifico*/
+    align-content: start; /*alinhar os itens ao inicio = start, ajusta os espacamentos*/
+  }
+
+  & .title { /*mexendo nas class title*/
+    font-size: 0.75rem; /*tamango fonte*/
+    letter-spacing: 0.08em; /*espacamento das fontes*/
+    text-transform: uppercase; /*caixa grande nas fontes*/
+    color: var(--brand-color-primary);
+  }
+
+  & .bottom {
+    flex-wrap: wrap; /*nesse caso se nao estiver espaço ele joga para baixo e se tiver ele deixa ao lado*/
+
+    & > div { /*div de primeiro nivel*/
+      margin-right: auto; /*margin direita em automatico, vai direto para direita o texto*/
+    }
+
+    & span {
+      font-size: .875rem; /*tamanho da fonte*/
+    }
+  }
+
+  @media (width >= 80em) {
+    .container {
+      padding-inline: 0; /*espacamento lateral*/
+      padding-bottom: 2rem; /*espacamento no chao*/
+    }
+
+    & .top {
+      grid-template-columns: auto 1fr; /*grid para ajustar colocar os textos a direita por uma fr fraçao*/
+
+      & nav {
+        margin-left: auto; /*para ajustar o tamanho do zingen na tela o tamanho, empurrar tudo para direita*/
+
+        & ul {
+          width: 14rem;
+        }
+      }
+    }
+  }
+}

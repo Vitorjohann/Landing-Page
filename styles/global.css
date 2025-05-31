@@ -53,6 +53,8 @@ html {
 
   overflow-x: hidden;
   /*pq estava dando rolamento no heixo horizontal dai isso no html faz nao tem rolamento no heixo horizontla*/
+
+  scroll-behavior: smooth; /*colocado no html para ele rolar mais calmo a pagina quando direcionada*/
 }
 
 /*toda a pagina cor*/
