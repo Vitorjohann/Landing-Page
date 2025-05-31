@@ -60,6 +60,7 @@ html {
 /*toda a pagina cor*/
 body {
   background-color: var(--bg-color);
+  overflow-x: hidden;
 }
 
 /*configurando os titulos da pagina pq sao todos iguais e mesmo tamanho*/
