@@ -9,3 +9,4 @@
 @import url(cards.css);
 @import url(features.css) (width >= 80rem); /*so vai importar isso para a media, no caso so vai funcionar no desktop por conta do tamanho*/
 @import url(pricing.css);
+@import url(download.css);

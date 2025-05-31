@@ -1,0 +1,40 @@
+#download {
+
+  .card {
+    padding: 3rem 1.5rem 15rem;
+    /*3 rem em cima 1.5rem laterais e 15 rem em baixo essa é a ordem tem que ter altura tbm pra caber a imagem*/
+    position: relative;
+    /*tem que ter no card para funcionar o outro absolute*/
+
+    &>img {
+      /*no & primeiro nivel de img, no caso a primeira imagem do card, o "&" é usado por conta de ser uma autlizacao do vscode*/
+      width: 14.5rem;
+      /*largura*/
+      position: absolute;
+      bottom: 0;
+      /*posicionar em baixo da pagina*/
+      right: -3.5rem;
+      /*para ficar no canto direito*/
+    }
+  }
+
+  .buttons { /*classe para ajustar os botoes e o espacamento*/
+    flex-wrap: wrap; /*se tiver pouco espaço ele joga para baixo*/
+    margin-top: 2rem;
+  }
+
+  @media (width >= 80em) { /*ajustar para desktop os tamanhos*/
+    .card {
+      padding: 8.75rem 5rem; /*8.75 e 5 rem nas laterais*/
+
+      & > div:nth-child(1) { /*a primeira div dentro do card*/
+        max-width: 40rem; /*tem que ter um maxwidth de 40rem para limitar*/
+      }
+
+      & > img { /*primeira imagem*/
+        width: 29.125rem; /*largura de 29.125rem */
+      }
+    }
+  }
+
+}
